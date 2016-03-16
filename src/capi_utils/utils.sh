@@ -37,7 +37,7 @@ pid_guard() {
   echo "------------ STARTING `basename $0` at `date` --------------" | tee /dev/stderr
 
   if [ ! -f "${pidfile}" ]; then
-    exit 0
+    return 0
   fi
 
   local pid=$(head -1 "${pidfile}")
@@ -68,11 +68,11 @@ wait_pid_death() {
 
   while true; do
     if [ ${countdown} -le 0 ]; then
-      exit 1
+      return 1
     fi
 
     if ! pid_is_running ${pid}; then
-      exit 0
+      return 0
     fi
 
     [ $(( ${countdown} % 10 )) = '0' ] && echo -n .
