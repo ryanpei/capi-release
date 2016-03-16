@@ -121,7 +121,7 @@ kill_and_wait() {
   echo "Killing ${pidfile}: ${pid} "
   kill ${pid}
 
-  if $(! wait_pid_death ${pid} ${timeout}); then
+  if ! $(wait_pid_death ${pid} ${timeout}); then
     echo -ne "\nKill timed out, using kill -9 on ${pid}... "
     kill -9 ${pid}
     sleep 0.5
