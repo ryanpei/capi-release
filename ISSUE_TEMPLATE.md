@@ -1,4 +1,4 @@
-Thanks for submitting an issue to `cf-acceptance-tests`. We are always trying to improve! To help us, please fill out the following template.
+Thanks for submitting an issue to `capi-release`. We are always trying to improve! To help us, please fill out the following template.
 
 ## Issue
 
